@@ -21,6 +21,13 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         tipLabel.text = "$0.00"
         totalLabel.text = "$0.00"
+        taxRateLabel.text = "$0.00"
+        var defaults = NSUserDefaults.standardUserDefaults()
+        var taxStatus: NSString = "taxno"
+        //defaults.setObject("taxStatusPref", forKey: taxStatus)
+        defaults.setInteger(0, forKey: "test")
+        defaults.synchronize()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,6 +54,55 @@ class ViewController: UIViewController {
     @IBAction func onTap(sender: AnyObject) {
         view.endEditing(true)
     }
+    
+    @IBOutlet weak var taxRateLabel: UILabel!
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+      //  println("view will appear")
+        
+        var defaults = NSUserDefaults.standardUserDefaults()
+        var rest = defaults.integerForKey("test")
+        //var tax = defaults.objectForKey("taxStatusPref") as String
+        var intValue = defaults.integerForKey("taxStatusPref")
+        if intValue >= 1 {
+            var tipPercentages = [0.18, 0.2, 0.22]
+            var tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
+            
+            var billAmount = NSString(string: billField.text).doubleValue
+            var tip = billAmount * tipPercentage
+            var taxRate = 0.09 * billAmount
+            var total = billAmount + tip + taxRate
+            
+            
+            tipLabel.text = "$\(tip)"
+            totalLabel.text = "$\(total)"
+            taxRateLabel.text = "$\(taxRate)"
+            
+            tipLabel.text = String(format: "$%.2f", tip)
+            totalLabel.text = String(format: "$%.2f", total)
+            taxRateLabel.text = String(format: "$%.2f", taxRate)
+            
+        } else {
+            taxRateLabel.text = "Tax Not Included"
+        }
+        println(intValue)
+    }
+    
+  /*  override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        println("view did appear")
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        println("view will disappear")
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        println("view did disappear")
+    }*/
    
 }
 

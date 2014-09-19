@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA087B0719CBBFA50047A0F1 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA087B0619CBBFA50047A0F1 /* UserViewController.swift */; };
 		CA161C2A19CB4EC700889A8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA161C2919CB4EC700889A8A /* AppDelegate.swift */; };
 		CA161C2C19CB4EC700889A8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA161C2B19CB4EC700889A8A /* ViewController.swift */; };
 		CA161C2F19CB4EC700889A8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA161C2D19CB4EC700889A8A /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CA087B0619CBBFA50047A0F1 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		CA161C2419CB4EC700889A8A /* tips.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tips.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA161C2819CB4EC700889A8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA161C2919CB4EC700889A8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +58,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA087B0519CBBF340047A0F1 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CA087B0619CBBFA50047A0F1 /* UserViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
 		CA161C1B19CB4EC600889A8A = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +87,7 @@
 		CA161C2619CB4EC700889A8A /* tips */ = {
 			isa = PBXGroup;
 			children = (
+				CA087B0519CBBF340047A0F1 /* View Controllers */,
 				CA161C2919CB4EC700889A8A /* AppDelegate.swift */,
 				CA161C2B19CB4EC700889A8A /* ViewController.swift */,
 				CA161C2D19CB4EC700889A8A /* Main.storyboard */,
@@ -213,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA161C2C19CB4EC700889A8A /* ViewController.swift in Sources */,
+				CA087B0719CBBFA50047A0F1 /* UserViewController.swift in Sources */,
 				CA161C2A19CB4EC700889A8A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,6 +419,7 @@
 				CA161C4519CB4EC700889A8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CA161C4619CB4EC700889A8A /* Build configuration list for PBXNativeTarget "tipsTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +428,7 @@
 				CA161C4819CB4EC700889A8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
